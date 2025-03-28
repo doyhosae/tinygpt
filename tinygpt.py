@@ -408,7 +408,7 @@ def train_model(model, data_handler, device, args, experiment_id):
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.learning_rate)
     
     # 학습 상태 변수
-    losses = []
+losses = []
     best_loss = float('inf')
     
     # 샘플 생성 지점
@@ -428,19 +428,19 @@ def train_model(model, data_handler, device, args, experiment_id):
             xb, yb = xb.to(device), yb.to(device)
             
             # 예측 및 손실 계산
-            logits = model(xb)
+    logits = model(xb)
             B, T, C = logits.shape
             logits = logits.view(B*T, C)
             targets = yb.view(B*T)
             loss = F.cross_entropy(logits, targets)
             
             # 손실 기록
-            losses.append(loss.item())
+    losses.append(loss.item())
             
             # 역전파 및 최적화
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
             
             # 샘플 생성 지점 확인
             for phase, phase_step in sample_points.items():
@@ -512,7 +512,7 @@ def train_model(model, data_handler, device, args, experiment_id):
     
     # 손실 그래프 시각화
     plt.figure(figsize=(10, 6))
-    plt.plot(losses)
+plt.plot(losses)
     plt.title('Learning Loss Over Time')
     plt.xlabel('Training Steps')
     plt.ylabel('Loss (lower is better)')
