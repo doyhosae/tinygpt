@@ -145,7 +145,7 @@ class TransformerBlock(nn.Module):
             nn.Linear(4 * embed_size, embed_size),
             nn.Dropout(0.2),
         )
-        
+
     def forward(self, x):
         # 첫 번째 서브레이어: 멀티헤드 어텐션 (잔차 연결 포함)
         x = x + self.attention(self.layer_norm1(x))
