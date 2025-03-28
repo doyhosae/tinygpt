@@ -1,0 +1,11 @@
+{
+  "block_size": 8,
+  "learning_mode": "normal",
+  "temperature": 0.5,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "seed": 42,
+  "no_interactive": false,
+  "text_file": "text.txt",
+  "total_steps": 500
+}
