@@ -512,7 +512,7 @@ losses = []
     
     # 손실 그래프 시각화
     plt.figure(figsize=(10, 6))
-plt.plot(losses)
+    plt.plot(losses)
     plt.title('Learning Loss Over Time')
     plt.xlabel('Training Steps')
     plt.ylabel('Loss (lower is better)')
